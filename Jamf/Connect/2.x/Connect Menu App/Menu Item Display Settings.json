@@ -1,30 +1,9 @@
 {
     "title": "Menu Item Display Settings",
-    "description": " An array of strings used to hide Jamf Connect menu items from users",
     "__preferencedomain": "com.jamf.connect",
     "properties": {
-        "Appearance": {
-            "type": "object",
-            "title": "Appearance Settings",
-            "properties": {
-                "ShowWelcomeWindow": {
-                    "title": "Show Welcome Window on Launch",
-                    "anyOf": [
-                        {
-                            "type": "null",
-                            "title": "Not Configured"
-                        },
-                        {
-                            "title": "Configured",
-                            "type": "boolean"
-                        }
-                    ]
-                }
-            }
-        },
         "HiddenMenuItems": {
             "title": "Hidden Menu Items",
-            "description": "Items that can be hidden: About, Actions, ChangePassword, GetHelp, GetSoftware, HomeDirectory, KerberosTickets, LastUser, PasswordExpiration, Preferences, ResetPassword, Shares, Connect, Quit",
             "anyOf": [
                 {
                     "type": "null",
@@ -35,7 +14,41 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Hidden Item"
+                        "title": "Hidden Menu Item",
+                        "options": {
+                            "enum_titles": [
+                                "About Menu",
+                                "Actions Menu",
+                                "Change Password Menu",
+                                "Get Help Menu",
+                                "Get Software Menu",
+                                "Network Home Directory Menu",
+                                "Kerberos Ticket Menu",
+                                "Last User Menu",
+                                "Password Expiration Menu",
+                                "Preferences Menu",
+                                "Reset Password Menu",
+                                "Shares Menu",
+                                "Connect Menu",
+                                "Quit Menu"
+                            ]
+                        },
+                        "enum": [
+                            "about",
+                            "actions",
+                            "changepassword",
+                            "gethelp",
+                            "getsoftware",
+                            "home",
+                            "tickets",
+                            "lastuser",
+                            "passwordexpiration",
+                            "preferences",
+                            "resetpassword",
+                            "shares",
+                            "connect",
+                            "quitjamfconnect"
+                        ]
                     }
                 }
             ]
