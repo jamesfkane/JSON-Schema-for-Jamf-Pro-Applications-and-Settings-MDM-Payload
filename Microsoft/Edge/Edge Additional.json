@@ -1701,6 +1701,30 @@
                 }
             ]
         },
+        "ExplicitlyAllowedNetworkPorts": {
+            "title": "Explicitly allowed network ports",
+            "description": "(ExplicitlyAllowedNetworkPorts)-This policy allows bypassing the restricted port list built into Microsoft Edge. The set of ports is defined as a comma-separated list that outgoing connections should be permitted on",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#explicitlyallowednetworkports"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Port"
+                    }
+                }
+            ]
+        },
         "ExternalProtocolDialogShowAlwaysOpenCheckbox": {
             "title": "ExternalProtocolDialogShowAlwaysOpenCheckbox - Show an \"Always open\" checkbox in external protocol dialog",
             "description": "This policy controls whether the \"Always allow this site to open links of this type\" checkbox is shown on external protocol launch confirmation prompts. This policy only applies to https:// links.\n\nIf you enable this policy, when an external protocol confirmation prompt is shown, the user can select \"Always allow\" to skip all future confirmation prompts for the protocol on this site.\n\nIf you disable this policy, the \"Always allow\" checkbox isn't displayed. The user will be prompted for confirmation every time an external protocol is invoked.\n\nPrior to Microsoft Edge 83, if you don't configure this policy, the \"Always allow\" checkbox isn't displayed. The user will be prompted for confirmation every time an external protocol is invoked.\n\nOn Microsoft Edge 83, if you don't configure this policy, the checkbox visibility is controlled by the \"Enable remembering protocol launch prompting preferences\" flag in edge://flags\n\nAs of Microsoft Edge 84, if you don't configure this policy, when an external protocol confirmation prompt is shown, the user can select \"Always allow\" to skip all future confirmation prompts for the protocol on this site.",
@@ -1744,6 +1768,26 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#familysafetysettingsenabled"
+                }
+            ]
+        },
+        "FetchKeepaliveDurationSecondsOnShutdown": {
+            "title": "Fetch keepalive duration on shutdown",
+            "description": "(FetchKeepaliveDurationSecondsOnShutdown)-Controls the duration (in seconds) that keepalive requests are allowed to prevent the browser from completing its shutdown",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#fetchkeepalivedurationsecondsonshutdown"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
                 }
             ]
         },
@@ -2025,6 +2069,25 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#hardwareaccelerationmodeenabled"
+                }
+            ]
+        },
+        "HeadlessModeEnabled": {
+            "title": "Allow Headless Mode",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#headlessmodeenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
@@ -2526,6 +2589,26 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#managedsearchengines"
+                }
+            ]
+        },
+        "MathSolverEnabled": {
+            "title": "Let users snip a Math problem and get the solution with a step-by-step explanation in Microsoft Edge",
+            "description": "(MathSolverEnabled)-This policy lets you manage whether users can use the Math Solver tool in Microsoft Edge or not",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#mathsolverenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
@@ -3235,6 +3318,26 @@
                 }
             ]
         },
+        "SharedArrayBufferUnrestrictedAccessAllowed": {
+            "title": "Allow SharedArrayBuffers in a non cross-origin-isolated context",
+            "description": "(SharedArrayBufferUnrestrictedAccessAllowed)-Specifies whether SharedArrayBuffers can be used in a non cross-origin-isolated context. A SharedArrayBuffer is a binary data buffer that can be used to create views on shared memory. SharedArrayBuffers have a memory access vulnerability in several popular CPUs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "ShowMicrosoftRewards": {
             "title": "ShowMicrosoftRewards - Show Microsoft Rewards experiences",
             "description": "Show Microsoft Rewards experience and notifications.\nIf you enable this policy:\n   - Microsoft account users (excludes Azure AD accounts) in search and earn markets will see the Microsoft Rewards experience in their Microsoft Edge user profile.\n   - The setting to enable Microsoft Rewards in Microsoft Edge settings will be enabled and toggled on.\n   - The setting to enable Give mode will be enabled and respect the user's setting.\n\nIf you disable this policy:\n   - Microsoft account users (excludes Azure AD accounts) in search and earn markets will not see the Microsoft Rewards experience in their Microsoft Edge user profile.\n   - The setting to enable Microsoft Rewards in Microsoft Edge settings will be disabled and toggled off.\n\nIf you don't configure this policy:\n   - Microsoft account users (excludes Azure AD accounts) in search and earn markets will see the Microsoft Rewards experience in their Microsoft Edge user profile.\n   - The setting to enable Microsoft Rewards in Microsoft Edge settings will be enabled and toggled on.\n   - The setting to enable Give mode will be enabled and respect the user's setting.",
@@ -3496,29 +3599,6 @@
                 }
             ]
         },
-        "TabFreezingEnabled": {
-            "title": "TabFreezingEnabled - Allow freezing of background tabs",
-            "description": "Controls whether Microsoft Edge can freeze tabs that are in the background for at least 5 minutes.\n\nTab freezing reduces CPU, battery, and memory usage. Microsoft Edge uses heuristics to avoid freezing tabs that do useful work in the background, such as display notifications, play sound, and stream video.\n\nIf you enable or don't configure this policy, tabs that have been in the background for at least 5 minutes might be frozen.\n\nIf you disable this policy, no tabs will be frozen.",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ],
-            "options": {
-                "infoText": "TabFreezingEnabled"
-            },
-            "links": [
-                {
-                    "rel": "Documentation Link",
-                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#tabfreezingenabled"
-                }
-            ]
-        },
         "TargetBlankImpliesNoOpener": {
             "title": "TargetBlankImpliesNoOpener - Do not set window.opener for links targeting _blank",
             "description": "If you enable this policy or leave it unset, the window.opener property is set to null unless the anchor specifies rel=\"opener\".\n\nIf you disable this policy, popups that target _blank are permitted to access (via JavaScript) the page that requested to open the popup.\n\nThis policy will be obsoleted in Microsoft Edge version 95.",
@@ -3645,6 +3725,35 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#translateenabled"
+                }
+            ]
+        },
+        "UpdatePolicyOverride": {
+            "title": "Microsoft Edge Auto Update Behavior",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#updatepolicyoverride"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Automatic Silent Updates Only",
+                            "Manual Check Only"
+                        ]
+                    },
+                    "enum": [
+                        "automatic-silent-only",
+                        "manual-only"
+                    ]
                 }
             ]
         },

@@ -181,6 +181,26 @@
                 }
             ]
         },
+        "NewTabPageContentEnabled": {
+            "title": "Allow Microsoft News content on the new tab page",
+            "description": "(NewTabPageContentEnabled)-If you enable or don't configure this policy, Microsoft Edge displays Microsoft News content on the new tab page. The user can choose different display options for the content, including but not limited to Content off, Content visible on scroll, Headings only, and Content visible. Enabling this policy doesn't force content to be visible - the user can continue to set their own preferred content position",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagecontentenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "NewTabPageSearchBox": {
             "title": "NewTabPageSearchBox - Configure the new tab page search box experience",
             "description": "You can configure the new tab page search box to use \"Search box (Recommended)\" or \"Address bar\" to search on new tabs. This policy only works if you set the search engine to a value other than Bing by setting the following two policies: \"DefaultSearchProviderEnabled\" and \"DefaultSearchProviderSearchURL\".\n\n If you disable or don't configure this policy and:\n\n- If the address bar default search engine is Bing, the new tab page uses the search box to search on new tabs.\n- If the address bar default search engine is not Bing, users are offered an additional choice (use \"Address bar\") when searching on new tabs.\n\n\nIf you enable this policy and set it to:\n\n- \"Search box (Recommended)\" ('bing'), the new tab page uses the search box to search on new tabs.\n- \"Address bar\" ('redirect'), the new tab page search box uses the address bar to search on new tabs.\n\nPolicy options mapping:\n\n* bing (bing) = Search box (Recommended)\n\n* redirect (redirect) = Address bar\n\nUse the preceding information when configuring this policy.",
