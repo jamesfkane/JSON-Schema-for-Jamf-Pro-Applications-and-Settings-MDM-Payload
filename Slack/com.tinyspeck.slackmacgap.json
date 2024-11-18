@@ -7,9 +7,9 @@
         "remove_empty_properties": true
     },
     "properties": {
-        "SlackNoAutoUpdates": {
+        "AutoUpdate": {
             "title": "Disable Auto Updates",
-            "description": "(SlackNoAutoUpdates)-Disables Auto Updates",
+            "description": "(AutoUpdate)-Disables Auto Updates",
             "anyOf": [
                 {
                     "type": "null",
